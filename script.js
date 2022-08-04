@@ -18,7 +18,7 @@ btnrandom.onclick = () => {
 async function callApi() {
   const resp = await axios.get("https://randomuser.me/api/");
   if (resp.data.results[0].gender == "male") {
-    gen.innerText = "👨👩";
+    gen.innerText = "👨";
   } else {
     gen.innerText = "👩";
   }
