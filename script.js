@@ -1,19 +1,11 @@
-callApi();
-
 const gen = document.getElementById("span-gender-icon");
 const img = document.getElementById("img-profile");
-const name= document.getElementById("p-name");
+const name = document.getElementById("p-name");
 const address = document.getElementById("p-address");
 const email = document.getElementById("p-email");
 const btnrandom = document.getElementById("btn-random");
 const user = document.getElementById("div-user-card");
 const loading = document.getElementById("div-loading-card");
-
-btnrandom.onclick = () => {
-  callApi();
-  user.style.display = "";
-  load.style.display = "none";
-};
 
 async function callApi() {
   const resp = await axios.get("https://randomuser.me/api/");
@@ -37,10 +29,14 @@ async function callApi() {
   console.log(resp.data.results[0]);
 }
 
-btnrandom.onload = () => {
-  load.style.display = "none";
+btnrandom.onclick = () => {
+  callApi();
   user.style.display = "";
+  loading.style.display = "none";
 };
 
-
-
+btnrandom.onload = () => {
+  loading.style.display = "none";
+  user.style.display = "";
+};
+callApi();
