@@ -41,6 +41,6 @@ btnrandom.onload = () => {
   load.style.display = "none";
   user.style.display = "";
 };
-}
+
 
 
